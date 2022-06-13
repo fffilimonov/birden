@@ -28,7 +28,7 @@ const main = async () => {
     deployedNetwork.address
     );
 
-  const txObject = await instance.methods.safeMint('https://images.pexels.com/photos/34299/herbs-flavoring-seasoning-cooking.jpg', goldtoken.address);
+  const txObject = await instance.methods.safeMint('https://birden.mypinata.cloud/ipfs/bafybeidvt4trjo7kdi6ofyiah6626lzssdc2244zit6lh5vsg4ndtt5hea', goldtoken.address);
   let tx = await client.sendTransactionObject(txObject, { from: account.address })
 
   let receipt = await tx.waitReceipt()

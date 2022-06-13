@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
-    "@celo/contractkit": "^2.0.0"
+    "@celo/contractkit": "^2.0.0",
+    "truffle-export-abi": "^1.0.1"
   }
 }

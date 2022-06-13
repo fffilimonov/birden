@@ -3364,7 +3364,7 @@ browserslist@4.14.2:
     escalade "^3.0.2"
     node-releases "^1.1.61"
 
-browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.20.2, browserslist@^4.20.3, browserslist@^4.6.2, browserslist@^4.6.4:
+browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.20.2, browserslist@^4.20.4, browserslist@^4.6.2, browserslist@^4.6.4:
   version "4.20.4"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.20.4.tgz#98096c9042af689ee1e0271333dbc564b8ce4477"
   integrity sha512-ok1d+1WpnU24XYN7oC3QWgTyMhY/avPJ/r9T00xxvUOIparA/gc+UPUMaod3i+G6s+nI2nUb9xZ5k794uIwShw==
@@ -4018,17 +4018,17 @@ copy-descriptor@^0.1.0:
   integrity sha512-XgZ0pFcakEUlbwQEVNg3+QAis1FyTL3Qel9FYy8pSkQqoG3PNoT0bOCQtOXcOkur21r2Eq2kI+IE+gsmAEVlYw==
 
 core-js-compat@^3.21.0, core-js-compat@^3.22.1:
-  version "3.22.8"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.22.8.tgz#46fa34ce1ddf742acd7f95f575f66bbb21e05d62"
-  integrity sha512-pQnwg4xtuvc2Bs/5zYQPaEYYSuTxsF7LBWF0SvnVhthZo/Qe+rJpcEekrdNK5DWwDJ0gv0oI9NNX5Mppdy0ctg==
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.23.0.tgz#324191a23bfbd229802718dcc1d213414b244624"
+  integrity sha512-i4FgbtahOArZBEteiL+czI5N/bp17w16bXmLagGThdA2zuX1a5X4HbBmOVD7ERRtk3wMtPOFEmlXpVV4lsvwNw==
   dependencies:
-    browserslist "^4.20.3"
+    browserslist "^4.20.4"
     semver "7.0.0"
 
 core-js-pure@^3.20.2:
-  version "3.22.8"
-  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.22.8.tgz#f2157793b58719196ccf9673cc14f3683adc0957"
-  integrity sha512-bOxbZIy9S5n4OVH63XaLVXZ49QKicjowDx/UELyJ68vxfCRpYsbyh/WNZNfEfAk+ekA8vSjt+gCDpvh672bc3w==
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.23.0.tgz#f27426a6144a37484cfc5fd8b56eecc5180cd393"
+  integrity sha512-ksjJc/xVTQzT2q6trPja2qWynMEaGO36rDui2SiqLPYab9TmPgT8nIVcre/yscviPCSweUdCDGKe4MsQA9w1zQ==
 
 core-js@^2.4.0:
   version "2.6.12"
@@ -4036,9 +4036,9 @@ core-js@^2.4.0:
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.6.5:
-  version "3.22.8"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.8.tgz#23f860b1fe60797cc4f704d76c93fea8a2f60631"
-  integrity sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.0.tgz#9e33448c8fd3b02ad023d85bd6e85da6335b5cc4"
+  integrity sha512-v2/hZoRcRrvQiBoGsHwmRdr+S4oICKcjA6xb2qjVurin6TpcDC1X2CIDa8rdu/d5n8RT/Sdoos2IlnpQ1rXs5A==
 
 core-util-is@1.0.2:
   version "1.0.2"
@@ -10207,10 +10207,10 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-error-overlay@^6.0.9:
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
-  integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+react-error-overlay@6.0.9, react-error-overlay@^6.0.9:
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
+  integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
 react-fast-compare@^3.2.0:
   version "3.2.0"

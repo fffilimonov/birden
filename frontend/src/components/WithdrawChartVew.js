@@ -2,7 +2,7 @@ import React from 'react';
 import {VictoryPie} from 'victory-pie';
 import {ReactComponent as CoinIcon} from '../assets/images/coinSmall.svg';
 
-export const WithdrawChartView = ({balance = 0, onClick}) => {
+export const WithdrawChartView = ({balance = 0, onClick, price}) => {
 
     return (
         <div style={{
@@ -58,7 +58,7 @@ export const WithdrawChartView = ({balance = 0, onClick}) => {
                     lineHeight: '38px',
                     textAlign: 'center'
                 }}>
-                    {balance.toFixed(2)}
+                    {(Math.max(balance, 0)).toFixed(2)}
                 </div>
                 <div style={{
                     position: 'absolute',
@@ -73,7 +73,7 @@ export const WithdrawChartView = ({balance = 0, onClick}) => {
                 }}>
                     <span>0.00</span>
                     <span style={{display: 'flex', alignItems: 'center'}}><CoinIcon
-                        style={{marginRight: 5}}/>{(1 / 600).toFixed(4)} CELO / SEC</span>
+                        style={{marginRight: 5}}/>{(price).toFixed(4)} CELO / SEC</span>
                     <span>1.00</span>
                 </div>
             </div>
@@ -90,7 +90,7 @@ export const WithdrawChartView = ({balance = 0, onClick}) => {
                 justifyContent: 'center',
                 cursor: 'pointer'
             }}>
-                {balance === 0 && (
+                {balance <= 0 && (
                     <span>I want this stream</span>
                 )}
                 {balance > 0 && balance !== 1 && (

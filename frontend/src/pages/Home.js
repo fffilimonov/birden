@@ -13,6 +13,8 @@ import Contract from '../Birden.json';
 
 const Home = () => {
     const tokenID = window.location.search ? window.location.search.split('?')[1] : 4
+    const pricePerSecond = 1/600
+    const timerLength = 600
 
     const [open, setOpen] = useState(true)
     const [videoUrl, setVideoUrl] = useState();
@@ -20,8 +22,10 @@ const Home = () => {
     const [w3, setW3] = useState(undefined)
     const [address, setAddress] = useState('')
     const [balance, setBalance] = useState(0)
-    const [timeLeft, setTimeLeft] = useState(600)
+    const [timeLeft, setTimeLeft] = useState(timerLength)
 
+    const balanceLeft = useRef(0)
+    const timeLeftRef = useRef(timerLength)
     const timer = useRef()
     const videoRef = useRef()
 
@@ -78,16 +82,23 @@ const Home = () => {
         await getToken()
     }
 
+    useEffect(() => {
+        balanceLeft.current = balance - pricePerSecond * (timerLength - timeLeft)
+        timeLeftRef.current = timeLeft
+    }, [timeLeft, balance, pricePerSecond])
+
     const onPlayClick = (event) => {
         event.stopPropagation();
-        if (videoUrl) {
+
+        if (videoUrl && videoRef.current?.paused) {
             videoRef.current.play();
             setPlaying(true);
             timer.current = setInterval(() => {
-                if (timeLeft <= 0) {
+                if (timeLeftRef.current <= 0 || balanceLeft.current < 0) {
                     clearInterval(timer.current)
                     setPlaying(false)
                     setVideoUrl(null)
+                    setTimeLeft(timerLength)
                     if (videoRef.current) {
                         videoRef.current.pause()
                     }
@@ -130,8 +141,9 @@ const Home = () => {
             </div>
             <div style={{position: 'relative', width: '100%'}}>
                 {!videoUrl ?
-                    <img className={styles.rightSideMedia} src={img}/> :
-                    <video controls={false} ref={videoRef} className={styles.rightSideMedia} src={videoUrl} playsInline />
+                    <img className={styles.rightSideMedia} src={img} alt={'preview'}/> :
+                    <video preload={'metadata'} controls={false} ref={videoRef} className={styles.rightSideMedia}
+                           src={videoUrl} playsInline/>
                 }
 
                 {!playing && (
@@ -158,7 +170,7 @@ const Home = () => {
                 </div>
 
                 <div className={styles.rightSideInfoChart}>
-                    <WithdrawChartView balance={balance - (600 - timeLeft)/600} onClick={rent}/>
+                    <WithdrawChartView price={pricePerSecond} balance={balanceLeft.current} onClick={rent}/>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ import ERC20 from '../ERC20.json';
 import Contract from '../Birden.json';
 
 const Home = () => {
-    const tokenID = 4
+    const tokenID = window.location.search ? window.location.search.split('?')[1] : 4
 
     const [open, setOpen] = useState(true)
     const [videoUrl, setVideoUrl] = useState();
@@ -95,8 +95,6 @@ const Home = () => {
                     setTimeLeft(prev => prev - 1)
                 }
             }, 1000)
-        } else {
-            getToken()
         }
     }
 

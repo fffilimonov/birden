@@ -11,18 +11,21 @@ import Contract from './Birden.json'
 
 import ERC20 from './ERC20.json'
 
+import Home from './pages/Home'
+
 function App() {
   const [w3, setW3] = useState(undefined)
   const [address, setAddress] = useState('')
   const [tokenID, setTokenID] = useState(0)
 
   async function connect() {
+      console.log(window.ethereum)
         const accs = await window.ethereum.request({method: 'eth_requestAccounts'})
         const EthersProvider = new ethers.providers.Web3Provider(window.ethereum);
         const web3 = new Web3(EthersProvider.provider);
         setW3(web3)
         setAddress(accs[0])
-  };
+  }
 
 
   async function getToken() {
@@ -70,6 +73,7 @@ function App() {
           placeholder='number'
           onChange={(e) => setTokenID(e.target.value)}
         />
+          <Home />
       </div>
   );
 }

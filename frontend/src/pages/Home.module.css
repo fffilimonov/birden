@@ -1,0 +1,147 @@
+.container {
+    max-width: 1680px;
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.leftSide {
+    width: 0;
+    transition: width linear 300ms;
+    height: 100%;
+    overflow: hidden;
+}
+
+.leftSide.active {
+    border-right: 1px solid #2D2D2F;
+    width: 35%;
+    box-sizing: border-box;
+}
+
+.leftSideContent {
+    box-sizing: border-box;
+    padding: 80px 62px;
+    min-width: 435px;
+}
+
+.leftSideTitle {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 55px;
+    margin-bottom: 36px;
+    display: block;
+}
+
+.leftSideText {
+    display: block;
+    margin-bottom: 36px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #8A8A8A;
+}
+
+.leftSideText > strong {
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.leftSideBadge {
+    background: #171718;
+    border-radius: 100px;
+    padding: 16px 16px 16px 32px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.leftSideBadgeTitle {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    display: block;
+}
+
+.leftSideBadgeText {
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    color: #8A8A8A;
+}
+
+.leftSideCoinBadge {
+    background: #060606;
+    border: 1px solid #2D2D2F;
+    border-radius: 100px;
+    padding: 0 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.rightSide {
+    height: 100%;
+    padding: 40px 88px;
+    box-sizing: border-box;
+    width: 65%;
+    transition: width linear 300ms;
+}
+
+.rightSideActive {
+    width: 100%;
+}
+
+.rightSideHeader {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.righSideMenuIcon {
+    cursor: pointer;
+}
+
+.rightSideWallet {
+    border: 2px solid #2D2D2F;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 5px 8px;
+}
+
+.rightSideMedia {
+    width: 100%;
+}
+
+.rightSideInfo {
+    margin-top: 44px;
+
+    display: flex;
+}
+
+.rightSideInfoContent {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 27px;
+    color: #8A8A8A;
+}
+
+.rightSideInfoContent > span {
+    display: block;
+}
+
+.rightSideInfoContentTitle {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 27px;
+    margin-bottom: 32px;
+    color: #fff;
+    margin-right: 30px;
+}
+
+.rightSideInfoChart {
+    margin-left: auto;
+}
